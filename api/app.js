@@ -9,5 +9,5 @@ app.use(express.json())
 app.use('/api/auth', authRoutes)
 
 app.listen(process.env.SERVER_PORT || 5000, () => {
-  console.log('server is running on ' + process.env.SERVER_PORT)
+  console.log('server is running onn ' + process.env.SERVER_PORT)
 })
