@@ -18,7 +18,7 @@ model User {
   email         String    @unique
   password      String?
   phone_number  String?
-  emailVerified Boolean   @default(false)
+  emailVerified Boolean?  @default(false)
   createdAt     DateTime  @default(now())
   user_type     UserType
   accounts      Account[]
