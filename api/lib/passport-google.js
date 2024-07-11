@@ -11,6 +11,7 @@ passport.use(
     },
     async (token, tokenSecret, profile, done) => {
       try {
+        console.log(profile)
         let user = await prisma.user.findUnique({
           where: { email: profile.emails[0].value },
         })
@@ -21,7 +22,8 @@ passport.use(
               first_name: profile.name.givenName,
               last_name: profile.name.familyName,
               email: profile.emails[0].value,
-              user_type: 'JobSeeker', // or determine it dynamically
+              user_type: 'JOBSEEKER',
+              emailVerified: true,
             },
           })
 

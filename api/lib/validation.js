@@ -12,5 +12,5 @@ export const registerSchema = z.object({
   email: z.string().email('invalid email format'),
   password: z.string().min(4, 'Password must be at least 4 characters long'),
   phone_number: z.string().optional(),
-  user_type: z.enum(['JobSeeker', 'Employer'], 'Invalid user type'),
+  user_type: z.enum(['JOBSEEKER', 'EMPLOYER'], 'Invalid user type'),
 })

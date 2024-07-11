@@ -12,7 +12,7 @@ passport.use(
   new JwtStrategy(opts, async (jwt_payload, done) => {
     try {
       const user = await prisma.user.findUnique({
-        where: { id: jwt_payload.id },
+        where: { user_id: jwt_payload.id },
       })
       if (user) {
         return done(null, user)
